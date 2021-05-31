@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rms-ui
+  labels:
+    name: rms-ui
+    app: resource-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: rms-ui-pod
+      app: resource-management
+  template:
+    metadata:
+      labels:
+        name: rms-ui-pod
+        app: resource-management
+    spec:
+      containers:
+        - name: rms
+          image: assignment/resource-management-ui:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000

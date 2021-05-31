@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# How to RUN
 
 
 ###Pre-requisite:
@@ -27,6 +27,7 @@ To work with backend container we have to update the /etc/hosts file with output
 as per following
 
 192.168.1.1 rms-service
+
 192.168.1.1 rms-service-ui
 
 ### Access of UI application
