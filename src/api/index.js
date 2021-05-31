@@ -21,8 +21,10 @@ export function getCaterersByCity(
       successCB(content, pagination);
       processingCB(false);
     })
-    .catch((response) => {
-      const { message: responseMessage } = JSON.parse(JSON.stringify(response));
+    .catch((error) => {
+        debugger;
+      const { message: responseMessage } = error.response.data.response;
+
       message.error(responseMessage);
       processingCB(false);
     });
@@ -41,8 +43,8 @@ export function getCatererByNameOrId(nameOrId, processingCB, successCB) {
       successCB([caterer], pagination);
       processingCB(false);
     })
-    .catch((response) => {
-      const { message: responseMessage } = JSON.parse(JSON.stringify(response));
+    .catch((error) => {
+      const { message: responseMessage } = error.response.data.response;
       message.error(responseMessage);
       processingCB(false);
     });
@@ -56,8 +58,8 @@ export function createCaterer(catererData, processingCB, successCB) {
       successCB();
       processingCB(false);
     })
-    .catch((response) => {
-      const { message: responseMessage } = JSON.parse(JSON.stringify(response));
+    .catch((error) => {
+      const { message: responseMessage } = error.response.data.response;
       message.error(responseMessage);
       processingCB(false);
     });
