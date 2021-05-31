@@ -5,7 +5,7 @@ export const searchJSON = [
     dataKey: "city",
   },
   {
-    placeholder: "Enter Name or Id",
+    placeholder: "Enter Name",
     span: 12,
     dataKey: "id",
   },
@@ -40,7 +40,7 @@ export const formJSON = [
   },
   {
     type: "text",
-    name: "emailAddress",
+    name: "email",
     label: "Email",
     nested: true,
     parentKey: "contact",
@@ -67,10 +67,10 @@ export const formJSON = [
   },
   {
     type: "text",
-    name: "cityName",
+    name: "city",
     label: "City",
     nested: true,
-    parentKey: "location",
+    parentKey: "address",
     required: true,
     requiredMessage: "Required!",
   },
@@ -79,16 +79,16 @@ export const formJSON = [
     name: "postalCode",
     label: "Postal Code",
     nested: true,
-    parentKey: "location",
+    parentKey: "address",
     required: true,
     requiredMessage: "Required!",
   },
   {
     type: "text",
-    name: "streetNameNumber",
+    name: "street",
     label: "Street Name",
     nested: true,
-    parentKey: "location",
+    parentKey: "address",
     required: true,
     requiredMessage: "Required!",
   },
@@ -109,7 +109,7 @@ export const catererListColumns = [
   },
   {
     title: "Email",
-    dataIndex: ["contact", "emailAddress"],
+    dataIndex: ["contact", "email"],
   },
   {
     title: "Mobile Number",
@@ -121,15 +121,15 @@ export const catererListColumns = [
   },
   {
     title: "City",
-    dataIndex: ["location", "cityName"],
+    dataIndex: ["address", "city"],
   },
   {
     title: "Postal Code",
-    dataIndex: ["location", "postalCode"],
+    dataIndex: ["address", "postalCode"],
   },
   {
     title: "Street Name",
-    dataIndex: ["location", "streetNameNumber"],
+    dataIndex: ["address", "street"],
   },
 ];
 
@@ -143,10 +143,10 @@ export const formInitialValues = {
     mobileNumber: "",
     phoneNumber: "",
   },
-  location: {
-    cityName: "",
+  address: {
+    city: "",
     postalCode: "",
-    streetNameNumber: "",
+    street: "",
   },
   name: "",
 };

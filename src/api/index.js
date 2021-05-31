@@ -1,6 +1,6 @@
 import axios from "axios";
 import { message } from "antd";
-const SERVER_URL = "http://rms-service:30008/resource-management/v1";
+const SERVER_URL = "http://localhost:8012/resource-management/v1";
 
 export function getCaterersByCity(
   cityName,
@@ -12,8 +12,8 @@ export function getCaterersByCity(
   axios
     .get(`${SERVER_URL}/caterer/all/${cityName}?page=${pageNumber}`)
     .then((response) => {
-      const { caterers } = response.data;
-      const { content, totalElements, size } = caterers;
+        debugger;
+      const { content, totalElements, size } = response.data;
       const pagination = {
         total: totalElements,
         pageSize: size,
@@ -22,7 +22,7 @@ export function getCaterersByCity(
       processingCB(false);
     })
     .catch((error) => {
-        debugger;
+
       const { message: responseMessage } = error.response.data.response;
 
       message.error(responseMessage);
@@ -35,12 +35,12 @@ export function getCatererByNameOrId(nameOrId, processingCB, successCB) {
   axios
     .get(`${SERVER_URL}/caterer/${nameOrId}`)
     .then((response) => {
-      const { caterer } = response.data;
+      //const { caterer } = response.data;
       const pagination = {
         total: 1,
         pageSize: 5,
       };
-      successCB([caterer], pagination);
+      successCB([response.data], pagination);
       processingCB(false);
     })
     .catch((error) => {
