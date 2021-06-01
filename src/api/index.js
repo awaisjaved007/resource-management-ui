@@ -1,6 +1,6 @@
 import axios from "axios";
 import { message } from "antd";
-const SERVER_URL = "http://localhost:8012/resource-management/v1";
+const SERVER_URL = "http://rms-service:30008/resource-management/v1";
 
 export function getCaterersByCity(
   cityName,
